@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:background="#E6ECF3"
+    android:backgroundTint="#E6ECF3"
+    android:fadingEdge="none"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="504dp"
+        android:layout_height="334dp"
+        android:adjustViewBounds="true"
+        android:contextClickable="true"
+        android:cropToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443"
+        app:srcCompat="@drawable/logo"
+        tools:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/topAccent"
+        android:layout_width="305dp"
+        android:layout_height="94dp"
+        android:adjustViewBounds="true"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276"
+        app:srcCompat="@drawable/accent" />
+
+    <Button
+        android:id="@+id/startButton"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E6ECF3"
+        android:clickable="true"
+        android:fontFamily="@font/augustjuly"
+        android:text="show me the way!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#272932"
+        android:textSize="24sp"
+
+        app:cornerRadius="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653"
+        app:strokeColor="#272932"
+        app:strokeWidth="0.5sp" />
+
+    <ImageView
+        android:id="@+id/bottomAccent"
+        android:layout_width="334dp"
+        android:layout_height="94dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.813"
+        app:srcCompat="@drawable/accent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
