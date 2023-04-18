@@ -1,6 +1,6 @@
 package com.example.truenorthapp.Model;
 
-public class TaskModel {
+public class TaskModel{
     private int id, status;
     private String task;
 
