@@ -11,7 +11,8 @@ import com.example.truenorthapp.Model.TaskModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// importing, initializing, and creating functions to interact with our database.
+// heavy utilization of last semester's knowledge! we did SQL databases in SET08120
 public class DatabaseHandling extends SQLiteOpenHelper {
     // defining the version of our database
     private static final int VERSION = 1;
@@ -111,7 +112,7 @@ public class DatabaseHandling extends SQLiteOpenHelper {
         database.update(TASK_TABLE, contentValues, ID + "=?", new String[] {String.valueOf(id)});
     }
 
-    // updating tasks
+    // updating/editing and committing said tasks
     public void taskUpdate(int id, String task){
         ContentValues contentValues = new ContentValues();
         contentValues.put(TASK, task);

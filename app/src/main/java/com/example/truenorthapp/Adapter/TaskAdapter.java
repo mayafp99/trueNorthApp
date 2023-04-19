@@ -1,6 +1,8 @@
 package com.example.truenorthapp.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,12 +25,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>
     private DailyTaskActivity activity;
     private DatabaseHandling database;
 
+    // instantiates this database and activity within context, wherever and whenever the taskadapter is called.
     public TaskAdapter(DatabaseHandling database, DailyTaskActivity activity)
     {
         this.database = database;
         this.activity = activity;
     }
 
+    // gets this activity wherever the method is called elsewhere in code.
     public Context getContext()
     {
         return activity;
@@ -40,6 +44,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>
         return new ViewHolder(itemView);
     }
 
+    // updates the database when a task has been checked/completed.
+    // uses a numeric boolean, 0 = unchecked, 1 = checked.
     public void onBindViewHolder(ViewHolder hold, int position)
     {
         database.openDatabase();
@@ -59,11 +65,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>
         });
     }
 
+    // returns the size of the task list from anywhere in the code that it is called.
     public int getItemCount()
     {
         return taskList.size();
     }
 
+    // transfers our checked/unchecked status into boolean for easy comparison and action dependency later.
     private boolean toBoolean(int n)
     {
         return n != 0;
@@ -80,6 +88,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>
         this.taskList = taskList;
     }
 
+    // allows us to delete a task from another class, particularly SwipeFunction.
     public void deleteItem(int position)
     {
         TaskModel item = taskList.get(position);
@@ -88,7 +97,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>
         notifyItemRemoved(position);
     }
 
-
+    // allows us to edit a task from other classes, particularly SwipeFunction.
     public void editTask(int position)
     {
         TaskModel item = taskList.get(position);

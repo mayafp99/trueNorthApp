@@ -52,7 +52,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#272932"
         android:textSize="24sp"
-
         app:cornerRadius="0sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

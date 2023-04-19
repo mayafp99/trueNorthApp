@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#293545</color>
+    <color name="text">#A1B4E8</color>
+    <color name="task_text">#96A1C3</color>
+    <color name="task_background">#2E405A</color>
+    <color name="checkbox">#8492C6</color>
+    <color name="taskbox">#59688A</color>
+    <color name="delete">#AF160B</color>
+</resources>

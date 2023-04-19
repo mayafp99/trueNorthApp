@@ -1,5 +1,7 @@
 package com.example.truenorthapp.Model;
 
+// blueprint for our task item. will always contain an ID of type integer and a task String of type string.
+
 public class TaskModel{
     private int id, status;
     private String task;

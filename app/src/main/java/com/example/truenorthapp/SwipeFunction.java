@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.truenorthapp.Adapter.TaskAdapter;
 
+// functions that work to allow the swipe features.
 public class SwipeFunction extends ItemTouchHelper.SimpleCallback
 {
     private TaskAdapter a;
@@ -22,12 +23,15 @@ public class SwipeFunction extends ItemTouchHelper.SimpleCallback
         this.a = a;
     }
 
+    // a boolean to record and respond to whenever a task is actually being shifted.
     @Override
     public boolean onMove(RecyclerView rv, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target)
     {
         return false;
     }
 
+    // records when the task is swiped left, and responds to this by popping up a deletion confirmation message.
+    // there doesn't seem to be a way to customize this builder popup either...
     @Override
     public void onSwiped(final RecyclerView.ViewHolder viewHolder, int side)
     {
@@ -53,11 +57,15 @@ public class SwipeFunction extends ItemTouchHelper.SimpleCallback
             AlertDialog d = b.create();
             d.show();
         }
+        // rules out all other options and uses else to decide if the task is swiped right.
+        // if it is, the task is edited from the adapter.
         else
         {
             a.editTask(direction);
         }
     }
+
+    // visual elements of swiping left or right.
     @Override
     public void onChildDraw(Canvas c, RecyclerView rv, RecyclerView.ViewHolder vh, float dX, float dY, int actState, boolean active)
     {
@@ -71,12 +79,12 @@ public class SwipeFunction extends ItemTouchHelper.SimpleCallback
         if(dX > 0)
         {
            icon = ContextCompat.getDrawable(a.getContext(), R.drawable.edit);
-           background = new ColorDrawable(ContextCompat.getColor(a.getContext(), R.color.dust_blue));
+           background = new ColorDrawable(ContextCompat.getColor(a.getContext(), R.color.fab));
         }
         else
         {
             icon = ContextCompat.getDrawable(a.getContext(), R.drawable.delete);
-            background = new ColorDrawable(ContextCompat.getColor(a.getContext(), R.color.red));
+            background = new ColorDrawable(ContextCompat.getColor(a.getContext(), R.color.delete));
         }
 
         int iconMargin = (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;

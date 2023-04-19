@@ -1,22 +1,16 @@
 package com.example.truenorthapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.truenorthapp.Adapter.TaskAdapter;
-import com.example.truenorthapp.Model.TaskModel;
-
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
+    // a simple entry screen displaying the logo and a start button.
+    // on clicking the button we are guided to the live info screen.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, DailyTaskActivity.class));
+                startActivity(new Intent(MainActivity.this, InterActivity.class));
             }
         });
     }
